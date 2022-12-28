@@ -1,0 +1,19 @@
+<div class="admin-container">
+    <div class="add-good-container">
+        <button mat-button class="add-good" [backgroundColor]="'pink'" (click)="newGoodProcessStatusChange()"
+            *ngIf="!isNewGoodProcess">
+            Add new good
+        </button>
+    </div>
+    <div class="new-good-container good-item" *ngIf="isNewGoodProcess">
+        <app-admin-good-item
+        [isFormForNewGood]="true" 
+        (onItemAdded)="addGood($event)"
+        (onCancelChanges)="cancelGoodAdding($event)">
+        </app-admin-good-item>
+    </div>
+    <div>
+        <app-admin-good-item *ngFor="let good of goods" [good]="good" (onItemDeleted)="removeGood($event)" class="good-item">
+        </app-admin-good-item>
+    </div>
+</div>

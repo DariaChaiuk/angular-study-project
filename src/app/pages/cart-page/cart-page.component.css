@@ -1,0 +1,17 @@
+.total-container{
+    margin: 8px;
+}
+
+.total-label{
+    font-size: 20px;
+}
+
+.cart-main-container{
+    display: flex;
+    justify-content: center;
+}
+
+.empty-cart{
+    font-size: 35px;
+    padding: 20px;
+}

@@ -1,0 +1,23 @@
+<div class="carousel">
+    <ng-container *ngFor="let slide of slides; let i = index" [ngSwitch]="slideComponentType">
+        <div
+            *ngIf="i === currentSlide"
+            class="slide"
+            @carouselAnimation>
+            <app-gallery-good-item 
+                *ngSwitchCase="'galleryGoodItem'"
+                [offerItem]="slide">
+            </app-gallery-good-item>
+            <img 
+            class="gallery-img"
+            *ngSwitchCase="'image'"
+            [src]="slide">
+        </div>
+    </ng-container>
+    <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left"></span>
+    </button>
+    <button class="control next" (click)="onNextClick()">
+        <span class="arrow right"></span>
+    </button>
+</div>

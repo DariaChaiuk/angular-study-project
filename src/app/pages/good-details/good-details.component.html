@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="gallery-container">
+        <app-gallery-slider [slideComponentType]="'image'" [slides]="selectedGood?.images"></app-gallery-slider>
+    </div>
+    <div class="info-card">
+        <mat-card class="good-info-wrapper">
+            <div class="good-info-container">
+                <mat-card-title-group>
+                    <mat-card-title class="title-details-label">{{selectedGood?.name}}</mat-card-title>
+                    <mat-card-subtitle>Collection: {{selectedGood?.collection}}</mat-card-subtitle>
+                    <mat-card-subtitle>Age: {{selectedGood?.age}}</mat-card-subtitle>
+                    <mat-card-subtitle>Description: {{selectedGood?.description}}</mat-card-subtitle>
+                </mat-card-title-group>
+                <div class="price-container">
+                    {{selectedGood?.price}}$
+                </div>
+            </div>
+            <button [backgroundColor]="'gray'" (click)="addToCart()" mat-raised-button>
+                Add to cart
+            </button>
+        </mat-card>
+    </div>
+</div>

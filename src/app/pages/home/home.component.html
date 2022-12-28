@@ -1,0 +1,44 @@
+<div>
+    <div>
+        <a class="side-arrow" (click)="openAboutUs()">
+            <div class="about-text">About us</div>
+            <img src="../../../assets/down-arrow.svg"/>
+        </a>
+        <div class="home-image-box">
+            <img src="../../../assets/store-orange.jpg"/>
+        </div>
+    </div>
+    <div class="gallery-block" [backgroundColor]="'pink'">
+        <div class="gallery-container">
+            <app-gallery-slider [slides]="offers" [slideComponentType]="'galleryGoodItem'"></app-gallery-slider>
+        </div>
+        <div class="description-container" [backgroundColor]="'gray'">
+            <div class="description-text-container">
+                Greetings! We are glad to see you on our web shop and we hope that you will enjoy our goods and services.
+                Our aim - better, cooler  and special for you! Enjoy your shopping with us!
+            </div>
+            <div class="team-text-container">
+                Your Shhh...shop team
+            </div>
+        </div>
+    </div>
+    <div class="about-block" [backgroundColor]="'gray'">
+        <div class="home-image-box">
+            <img src="../../../assets/store-orange.jpg"/>
+        </div>
+        <div class="about-text-container">
+            <div class="about-us-text" [backgroundColor]="'gray'">
+                <div class="about-us-header" [attr.id]="'aboutus'">ABOUT US</div>
+                <div class="about-us-body">We are new ukrainian brand since 2022 year but we trying to do our best for you.
+                    Our services includes:
+                    <ul>
+                        <li>delivery through all Europe</li>
+                        <li>wide variety of goods</li>
+                        <li>low prices</li>
+                        <li>bonuses and presents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

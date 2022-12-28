@@ -1,0 +1,45 @@
+.item-card{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.img-input{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgba(0,0,0,.04);
+    padding: 5px;
+    align-items: center;
+}
+
+.images-input-container{
+    width: 100%;
+}
+
+.form-buttons-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.images-header-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.img-input>input {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.newItem{
+    border: 1px solid rgb(100, 226, 100) !important;
+}
+
+.oldItem{
+    border: 1px solid black;
+}

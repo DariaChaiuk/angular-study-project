@@ -1,0 +1,58 @@
+<div class="view-all-container">
+    <div class="filter-section">
+        <form class="filter-section-item" [formGroup]="filtersData">
+            <button class="filter-menu-button" mat-button [matMenuTriggerFor]="filterMenu" [backgroundColor]="'pink'">Filter</button>
+            <mat-menu #filterMenu="matMenu">
+                <div class="age-filter filter-menu-element" mat-menu-item (click)="$event.stopPropagation();">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Age category</mat-label>
+                        <mat-select formControlName="ageFilter">
+                            <mat-option *ngFor="let age of ages" [value]="age">
+                                {{age}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="collection-filter filter-menu-element" mat-menu-item (click)="$event.stopPropagation();">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Collection</mat-label>
+                        <mat-select formControlName="collectionFilter">
+                            <mat-option *ngFor="let collection of collections" [value]="collection">
+                                {{collection}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="new-filter filter-menu-element" mat-menu-item (click)="$event.stopPropagation();">
+                    <mat-checkbox formControlName="showNewCollection">Show only new collection</mat-checkbox>
+                </div>
+                <div class="price-filter filter-menu-element" mat-menu-item (click)="$event.stopPropagation();">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Price from</mat-label>
+                        <input matInput formControlName="priceFrom">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Price to</mat-label>
+                        <input matInput formControlName="priceTo">
+                    </mat-form-field>
+                </div>
+                <div class="apply-button-container" (click)="$event.stopPropagation();">
+                    <button mat-button [backgroundColor]="'pink'" (click) = 'filter()'>Apply</button>
+                </div>
+            </mat-menu>
+        </form>
+        <div class="sort-by filter-section-item">
+            <mat-form-field appearance="fill">
+                <mat-label>Sort by</mat-label>
+                <mat-select (selectionChange)="sortGoods($event)" [value]="sortBy[0]">
+                    <mat-option *ngFor="let sort of sortBy" [value]="sort">
+                        {{sort}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="goods-container">
+        <app-good-item *ngFor="let good of filteredGoods" [good]="good"></app-good-item>
+    </div>
+</div>

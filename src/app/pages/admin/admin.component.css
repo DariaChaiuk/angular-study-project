@@ -1,0 +1,21 @@
+.admin-container{
+    padding: 15px;
+}
+
+.add-good{
+    width: 100%;
+}
+
+.add-good-container{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.new-good-container{
+    border: 1px solid greenyellow;
+}
+
+.good-item{
+    display: block;
+    margin-bottom: 5px;
+}

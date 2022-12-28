@@ -1,0 +1,63 @@
+.good-image-container {
+    height: 85%;
+    width: 100%;
+    position: relative;
+}
+
+.good-image-container>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.good-container {
+    height: 350px;
+    width: 300px;
+    padding: 5px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.name-container {
+    font-size: 16px;
+}
+
+.good-info-container {
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    padding: 5px;
+}
+
+.good-info-container>button{
+    width: 50%;
+    border: 1px dotted black;
+    border-radius:  0.5em;
+    cursor: pointer;
+    color: black;
+}
+
+.left-good-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.price-container {
+    font-weight: bolder;
+}
+
+.new-tag {
+    width: 45px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    top: 5px;
+    left: 80%;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+}

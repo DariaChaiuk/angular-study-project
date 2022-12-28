@@ -1,0 +1,65 @@
+.view-all-container {
+    padding: 20px;
+    width: 100%;
+}
+
+.goods-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-section{
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+    padding-bottom: 5px;
+}
+
+.filter-section>mat-autocomplete{
+    height: 20px;
+    width: 100px;
+}
+
+@media (max-width: 643px) {
+    .goods-container{
+        justify-content: center;
+    }
+}
+
+.age-filter {
+    color: black;
+}
+
+.price-filter {
+    display: flex;
+    justify-content: space-around;
+}
+
+.price-filter>mat-form-field{
+    width: 100px;
+    margin-right: 2px;
+}
+
+.apply-button-container{
+    padding: 16px;
+}
+
+.apply-button-container>button{
+    width: 100%;
+}
+
+.filter-menu-element{
+    padding: 5px;
+}
+
+.filter-menu-button{
+    height: 100%;
+}
+
+
+
+.filter-section-item{
+    width: 100px;
+}

@@ -1,0 +1,10 @@
+<div class="item-container">
+    <img class="img-container" [src]="offerItem.src"/>
+    <div class="info-container" [backgroundColor]="'gray'">
+        <div class="description-container">{{offerItem.description}}</div>
+        <div class="price-container">{{offerItem.price}}$</div>
+    </div>
+    <div class="offer-button">
+        <button mat-raised-button (click)="goToOffer()">View offer</button>
+    </div>
+</div>

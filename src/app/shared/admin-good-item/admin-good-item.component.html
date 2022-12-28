@@ -1,0 +1,61 @@
+<form class="item-card" [formGroup]="goodData">
+    <div>Id {{good.id}}</div>
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [value]="good.name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [value]="good.price" formControlName="price">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [value]="good.description" formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Collection age</mat-label>
+        <mat-select formControlName="ages">
+            <mat-option *ngFor="let age of ages" [value]="age">
+                {{age}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <mat-checkbox formControlName="isNewCollection" matInput>Is new collection</mat-checkbox>
+    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Collection</mat-label>
+        <mat-select formControlName="collections">
+            <mat-option *ngFor="let collection of collections" [value]="collection">
+                {{collection}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="images-input-container">
+        <div class="images-header-container">
+            <mat-label>Image urls</mat-label>
+            <button mat-button *ngIf="!showAddingNewImgInput" (click)="changeAddingNewImgUrlStatus()">
+                <mat-icon>playlist_add</mat-icon>
+                <label>Add image url</label>
+            </button>
+        </div>
+        <div appearance="fill" class="img-input" *ngIf="showAddingNewImgInput">
+            <input matInput type="text" formControlName="newImgUrl">
+            <mat-icon (click)="clearNewImgInput()"> format_clear</mat-icon>
+            <mat-icon (click)="changeAddingNewImgUrlStatus()">cancel</mat-icon>
+            <mat-icon (click)="addImg()">add_photo_alternate</mat-icon>
+        </div>
+        <ng-container formArrayName="images">
+            <div appearance="fill" *ngFor="let img of images.value; let i = index" class="img-input" >
+                <input matInput type="text" [value]="img" [formControlName]="i" [ngClass]="checkItemIsOld(good.images, img) ? 'oldItem' : 'newItem'">
+                <mat-icon class="delete-btn" (click)="deleteImg(i)">delete_forever</mat-icon>
+            </div>
+        </ng-container>
+    </div>
+    <div class="form-buttons-container">
+        <button mat-button (click)="applyChanges(good.id)" [backgroundColor]="'pink'" [disabled]="!formHasChanges" >
+            {{isFormForNewGood ? 'Add good' : 'Apply changes'}}</button>
+        <button mat-button (click)="deleteGood(good.id)" [backgroundColor]="'pink'" *ngIf = "!isFormForNewGood">Delete</button>
+        <button mat-button (click)="cancelOperation()" [backgroundColor]="'pink'" [disabled]="!formHasChanges">Cancel</button>
+    </div>
+</form>

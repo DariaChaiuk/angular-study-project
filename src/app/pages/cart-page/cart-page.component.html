@@ -1,0 +1,16 @@
+<div class="cart-main-container">
+<div *ngIf="items.length != 0">
+    <app-cart-card *ngFor="let item of items" [cartItem]="item"></app-cart-card>
+    <div class="total-container">
+        <mat-card>
+            <mat-card-content>
+                <div class="total-label">Total amount</div>
+                <div>{{totalPrice}}</div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div *ngIf="items.length === 0" class="empty-cart">
+    No items in cart
+</div>
+</div>

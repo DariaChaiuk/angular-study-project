@@ -1,0 +1,40 @@
+.example-card {
+    /* max-width: 400px; */
+    margin: 8px;
+    display: flex;
+}
+  
+:host /deep/ .mat-card-header-text {
+    margin: 0;
+}
+
+.good-img{
+    width: 20%;
+    height: 100%;
+}
+
+:host /deep/ .action-buttons>button{
+    margin: 0;
+}
+
+.cart-good-info{
+    padding: 10px;
+}
+
+.cart-card-content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0!important;
+    padding: 30px;
+}
+
+.action-buttons{
+    padding: 10px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.number-input{
+    width: 100px;
+}

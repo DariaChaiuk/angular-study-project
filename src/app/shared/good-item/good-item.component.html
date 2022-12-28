@@ -1,0 +1,15 @@
+<div class="good-container" [backgroundColor]="'pink'">
+    <div class="good-image-container" (click)="showDetails()">
+        <div class="new-tag" *ngIf="good.isNewCollection">New!</div>
+        <img [src]="good.images[0]">
+    </div>
+    <div class="good-info-container">
+        <div class="left-good-info-container">
+            <div class="name-container">{{good.name}}</div>
+            <div class="price-container">{{good.price}}$</div>
+        </div>
+        <button [backgroundColor]="'gray'" (click)="addToCart()" mat-raised-button>
+            Add to cart
+        </button>
+    </div>
+</div>
